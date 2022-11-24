@@ -47,7 +47,7 @@ export default function Input({
 const styles = StyleSheet.create({
   input: {
     width: theme.WIDTH / 1.35,
-    marginTop: theme.space[3],
+    marginBottom: theme.space[3],
     fontSize: theme.fontSizes.body,
     paddingLeft: theme.space[2],
     fontFamily: "serif",

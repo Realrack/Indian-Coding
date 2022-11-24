@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 
 import { TextInput } from "react-native-paper";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 import BaseView from "../../components/baseView.component";
 import { theme } from "../../infrastructure/theme";
 import Button from "../../components/button.component";
 import Input from "../../components/input.component";
+import BackButton from "../../components/backButton.component";
 
 const SignupScreen = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = useState(true);
@@ -19,14 +19,8 @@ const SignupScreen = ({ navigation }) => {
 
   return (
     <BaseView style={styles.container}>
-      <View style={{ marginTop: "2%", marginLeft: 2 }}>
-        <FontAwesome
-          onPress={() => navigation.goBack()}
-          color={theme.colors.brand.primary}
-          size={30}
-          name={"arrow-left"}
-        />
-      </View>
+      <BackButton onPress={() => navigation.goBack()} />
+
       <View style={styles.inputcheck}>
         <Text style={{ fontSize: 25, color: "#000", fontWeight: "bold" }}>
           Enter Details
@@ -37,15 +31,14 @@ const SignupScreen = ({ navigation }) => {
           value={name}
           setValue={(text) => setName(text)}
           label="Name"
-          keyboardType="ascii-capable"
+          left={<TextInput.Icon name={"account"} />}
         />
         <Input
           value={email}
           setValue={(text) => setEmail(text)}
-          theme={{ colors: { primary: theme.colors.brand.primary } }}
           style={styles.input}
           label="Email"
-          keyboardType="email-address"
+          left={<TextInput.Icon name={"email"} />}
         />
         <Input
           secureTextEntry={passwordVisible}
@@ -57,9 +50,9 @@ const SignupScreen = ({ navigation }) => {
           }
           value={password}
           setValue={(text) => setPassword(text)}
-          theme={{ colors: { primary: theme.colors.brand.primary } }}
           style={styles.input}
           label="Create Password"
+          left={<TextInput.Icon name={"lock"} />}
         />
         <Input
           secureTextEntry={passwordVisible2}
@@ -69,11 +62,11 @@ const SignupScreen = ({ navigation }) => {
               onPress={() => setPasswordVisible2(!passwordVisible2)}
             />
           }
-          theme={{ colors: { primary: theme.colors.brand.primary } }}
           style={styles.input}
           value={confirmPassword}
           setValue={(text) => setConfirmPassword(text)}
           label="Confirm Password"
+          left={<TextInput.Icon name={"lock"} />}
         />
       </View>
       <View style={styles.touchContainer}>

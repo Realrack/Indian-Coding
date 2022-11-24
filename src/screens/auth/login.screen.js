@@ -23,7 +23,7 @@ const LoginScreen = ({ navigation }) => {
           setValue={(text) => setEmail(text)}
           style={styles.input}
           label="Email"
-          left={<TextInput.Icon name={"lock"} />}
+          left={<TextInput.Icon name={"email"} />}
         />
         <Input
           value={password}
@@ -37,7 +37,7 @@ const LoginScreen = ({ navigation }) => {
               onPress={() => setPasswordVisible(!passwordVisible)}
             />
           }
-          left={<TextInput.Icon name={"account"} />}
+          left={<TextInput.Icon name={"lock"} />}
         />
 
         <TouchableOpacity

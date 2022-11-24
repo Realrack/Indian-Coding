@@ -29,5 +29,7 @@ const styles = StyleSheet.create({
     width: theme.WIDTH / 1.35,
     height: theme.lineHeights.input,
     justifyContent: "center",
+    marginTop: theme.space[3],
+    alignSelf: "center",
   },
 });
