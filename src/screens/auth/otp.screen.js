@@ -92,10 +92,10 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: theme.colors.bg.primary,
   },
-  input: {
-    backgroundColor: theme.colors.bg.primary,
-    marginBottom: 5,
-  },
+  // input: {
+  //   // backgroundColor: theme.colors.bg.primary,
+  //   //marginBottom: 5,
+  // },
   touchContainer: {
     alignItems: "center",
     marginTop: "5%",
