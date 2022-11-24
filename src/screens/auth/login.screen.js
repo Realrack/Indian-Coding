@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { TextInput } from "react-native-paper";
 
 import BaseView from "../../components/baseView.component";
 import { theme } from "../../infrastructure/theme";
 import Input from "../../components/input.component";
 import Button from "../../components/button.component";
-import Title from "../../components/title.component";
+import InputContainer from "../../components/inputContainer.component";
+import Text from "../../components/text.component";
 
 const LoginScreen = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = useState(true);
@@ -14,20 +15,20 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = React.useState();
 
   return (
-    <BaseView style={styles.container}>
-      <Title mt={theme.space[5]}>Enter your Email-Id & Password</Title>
-      <View style={styles.inputcheck}>
+    <BaseView>
+      <Text mt={theme.space[5]} ta={"center"} mb={theme.space[1]} fw title>
+        Enter your Email-Id & Password
+      </Text>
+      <InputContainer>
         <Input
           value={email}
           setValue={(text) => setEmail(text)}
-          style={styles.input}
           label="Email"
           left={<TextInput.Icon name={"email"} />}
         />
         <Input
           value={password}
           setValue={(text) => setPassword(text)}
-          style={styles.input}
           label="Password"
           secureTextEntry={passwordVisible}
           right={
@@ -43,69 +44,34 @@ const LoginScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("Forgot")}
           style={styles.forgot}
         >
-          <Text style={{ color: theme.colors.brand.primary, fontSize: 17 }}>
+          <Text subtitle color={theme.colors.brand.primary}>
             Forgot Password?
           </Text>
         </TouchableOpacity>
-      </View>
+      </InputContainer>
 
       <Button style={styles.touch}>Login</Button>
 
-      <View style={styles.loginContainer}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Signup")}
-          style={{ flexDirection: "row", justifyContent: "center" }}
-        >
-          <Text style={{ color: "#000", fontSize: 18 }}>New user?</Text>
-          <Text style={{ color: theme.colors.brand.primary, fontSize: 18 }}>
-            {" "}
-            Sign up
-          </Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Signup")}
+        style={{ flexDirection: "row", justifyContent: "center" }}
+      >
+        <Text mt={theme.space[3]} subtitle>
+          New user?
+        </Text>
+        <Text mt={theme.space[3]} subtitle color={theme.colors.brand.primary}>
+          {" "}
+          Sign up
+        </Text>
+      </TouchableOpacity>
     </BaseView>
   );
 };
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-  },
-  text: {
-    color: "#000",
-    fontSize: 18,
-    textAlign: "center",
-  },
-  inputcheck: {
-    margin: 20,
-    padding: 20,
-    borderColor: "#d9d9d9",
-    borderWidth: 1,
-    borderRadius: 30,
-  },
-  input: {
-    backgroundColor: "#fff",
-    margin: 3,
-  },
   forgot: {
-    marginTop: 20,
+    marginTop: theme.space[3],
     alignItems: "flex-end",
-  },
-  touchContainer: {
-    alignItems: "center",
-    marginTop: "5%",
-  },
-  touch: {
-    // backgroundColor: theme.colors.brand.primary,
-    // padding: 20,
-    // borderRadius: 25,
-  },
-  otpText: {
-    color: "#fff",
-    fontWeight: "bold",
-  },
-  loginContainer: {
-    marginTop: "10%",
   },
 });

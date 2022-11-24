@@ -14,6 +14,7 @@ export const fontSizes = {
   caption: 12,
   button: 14,
   body: 16,
+  subtitle: 18,
   title: 20,
   h5: 24,
   h4: 34,
