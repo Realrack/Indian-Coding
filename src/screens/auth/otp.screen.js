@@ -19,15 +19,15 @@ const OtpScreen = ({ navigation }) => {
         <Text style={styles.text}>Enter your Mobile no.</Text>
       </View>
       <View style={styles.inputcheck}>
-        <View>
-          <Input
-            value={number}
-            setValue={(text) => setNumber(text)}
-            style={styles.input}
-            label="Mobile"
-            maxLength={10}
-          />
-        </View>
+        <Input
+          value={number}
+          left={<TextInput.Icon name={"phone"} />}
+          setValue={(text) => setNumber(text)}
+          style={styles.input}
+          label="Mobile"
+          maxLength={10}
+        />
+
         <View
           style={{ flexDirection: "row", alignItems: "center", marginTop: 10 }}
         >
