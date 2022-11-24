@@ -1,13 +1,17 @@
 import React from "react";
-import { View, Text } from "react-native";
 import StackScreen from "./src/navigation/stack.navigation";
-import OtpScreen from "./src/screens/auth/otp.screen";
-import LoginScreen from "./src/screens/auth/login.screen";
+import {
+  useFonts as useOswald,
+  Oswald_400Regular,
+} from "@expo-google-fonts/oswald";
+import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
 export default function App() {
-  return (
-    <View style={{ flex: 1 }}>
-      <StackScreen />
-    </View>
-  );
+  const [oswaldLoaded] = useOswald({ Oswald_400Regular });
+  const [latoLoaded] = useLato({ Lato_400Regular });
+
+  if (!oswaldLoaded || !latoLoaded) {
+    return null;
+  }
+  return <StackScreen />;
 }

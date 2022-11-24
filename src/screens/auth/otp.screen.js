@@ -7,6 +7,7 @@ import BaseView from "../../components/baseView.component";
 import { theme } from "../../infrastructure/theme";
 import Button from "../../components/button.component";
 import Input from "../../components/input.component";
+import Title from "../../components/title.component";
 
 const OtpScreen = ({ navigation }) => {
   const [selected, setSelection] = React.useState(false);
@@ -15,9 +16,7 @@ const OtpScreen = ({ navigation }) => {
 
   return (
     <BaseView>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>Enter your Mobile no.</Text>
-      </View>
+      <Title mt={theme.space[5]}>Enter your Mobile no.</Title>
       <View style={styles.inputcheck}>
         <Input
           value={number}
@@ -25,20 +24,17 @@ const OtpScreen = ({ navigation }) => {
           setValue={(text) => setNumber(text)}
           style={styles.input}
           label="Mobile"
+          keyBoardType="numeric"
           maxLength={10}
         />
 
-        <View
-          style={{ flexDirection: "row", alignItems: "center", marginTop: 10 }}
-        >
+        <View style={styles.checkTextContiner}>
           <CheckBox
             value={selected}
             onValueChange={() => setSelection(!selected)}
             color={theme.colors.brand.primary}
           />
-          <Text style={{ fontSize: 16, color: "gray", marginLeft: 5 }}>
-            I have a referral code.
-          </Text>
+          <Text style={styles.checkText}>I have a referral code.</Text>
         </View>
         <View>
           {selected ? (
@@ -76,14 +72,6 @@ const OtpScreen = ({ navigation }) => {
 export default OtpScreen;
 
 const styles = StyleSheet.create({
-  textContainer: {
-    marginTop: "20%",
-  },
-  text: {
-    color: theme.colors.text.primary,
-    fontSize: theme.fontSizes.title,
-    textAlign: "center",
-  },
   inputcheck: {
     margin: 20,
     padding: 20,
@@ -92,22 +80,19 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: theme.colors.bg.primary,
   },
-  // input: {
-  //   // backgroundColor: theme.colors.bg.primary,
-  //   //marginBottom: 5,
-  // },
+  checkTextContiner: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  checkText: {
+    fontSize: 16,
+    color: "gray",
+    marginLeft: 5,
+  },
   touchContainer: {
     alignItems: "center",
     marginTop: "5%",
-  },
-  // touch: {
-  //   backgroundColor: theme.colors.brand.primary,
-  //   //   padding: 20,
-  //   borderRadius: 25,
-  // },
-  otpText: {
-    color: theme.colors.text.primary,
-    fontWeight: "bold",
   },
   loginContainer: {
     marginTop: "10%",

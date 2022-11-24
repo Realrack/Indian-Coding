@@ -4,4 +4,4 @@ export const lineHeights = {
   input: 50,
 };
 
-export const space = [0, 4, 8, 16, 32, 64];
+export const space = [0, 4, 8, 16, 32, 64, 128];

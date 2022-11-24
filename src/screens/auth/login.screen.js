@@ -6,6 +6,7 @@ import BaseView from "../../components/baseView.component";
 import { theme } from "../../infrastructure/theme";
 import Input from "../../components/input.component";
 import Button from "../../components/button.component";
+import Title from "../../components/title.component";
 
 const LoginScreen = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = useState(true);
@@ -14,9 +15,7 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <BaseView style={styles.container}>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>Enter your Email-Id & Password</Text>
-      </View>
+      <Title mt={theme.space[5]}>Enter your Email-Id & Password</Title>
       <View style={styles.inputcheck}>
         <Input
           value={email}
@@ -72,9 +71,6 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-  },
-  textContainer: {
-    marginTop: "30%",
   },
   text: {
     color: "#000",

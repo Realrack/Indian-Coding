@@ -10,12 +10,15 @@
     "lint": "eslint . --ext .js"
   },
   "dependencies": {
+    "@expo-google-fonts/lato": "^0.2.2",
+    "@expo-google-fonts/oswald": "^0.2.2",
     "@react-native-community/eslint-config": "^3.2.0",
     "@react-navigation/native": "^6.0.14",
     "@react-navigation/native-stack": "^6.9.2",
     "eslint": "^8.28.0",
     "expo": "~47.0.8",
     "expo-checkbox": "^2.2.2",
+    "expo-font": "~11.0.1",
     "expo-status-bar": "~1.4.2",
     "prettier": "^2.8.0",
     "react": "18.1.0",
