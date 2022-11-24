@@ -35,13 +35,13 @@ const SignupScreen = ({ navigation }) => {
           theme={{ colors: { primary: theme.colors.brand.primary } }}
           style={styles.input}
           value={name}
-          onChangeText={(text) => setName(text)}
+          setValue={(text) => setName(text)}
           label="Name"
           keyboardType="ascii-capable"
         />
         <Input
           value={email}
-          onChangeText={(text) => setEmail(text)}
+          setValue={(text) => setEmail(text)}
           theme={{ colors: { primary: theme.colors.brand.primary } }}
           style={styles.input}
           label="Email"
@@ -56,7 +56,7 @@ const SignupScreen = ({ navigation }) => {
             />
           }
           value={password}
-          onChangeText={(text) => setPassword(text)}
+          setValue={(text) => setPassword(text)}
           theme={{ colors: { primary: theme.colors.brand.primary } }}
           style={styles.input}
           label="Create Password"
@@ -72,7 +72,7 @@ const SignupScreen = ({ navigation }) => {
           theme={{ colors: { primary: theme.colors.brand.primary } }}
           style={styles.input}
           value={confirmPassword}
-          onChangeText={(text) => setConfirmPassword(text)}
+          setValue={(text) => setConfirmPassword(text)}
           label="Confirm Password"
         />
       </View>
