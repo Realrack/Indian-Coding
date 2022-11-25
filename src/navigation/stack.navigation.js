@@ -7,6 +7,7 @@ import LoginScreen from "../screens/auth/login.screen";
 import SignupScreen from "../screens/auth/signup.screen";
 import ForgotScreen from "../screens/auth/forgot.screen";
 import { theme } from "../infrastructure/theme";
+import LoaderComponent from "../components/loader.component";
 
 const StackScreen = () => {
   const Stack = createNativeStackNavigator();
@@ -20,6 +21,11 @@ const StackScreen = () => {
         }}
       >
         <Stack.Screen name="OTP" component={OtpScreen} />
+        <Stack.Screen
+          options={{ statusBarColor: "#fff" }}
+          name="Loader"
+          component={LoaderComponent}
+        />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Signup" component={SignupScreen} />
         <Stack.Screen name="Forgot" component={ForgotScreen} />

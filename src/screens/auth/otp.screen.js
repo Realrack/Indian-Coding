@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Image } from "react-native";
 import { TextInput } from "react-native-paper";
 import CheckBox from "expo-checkbox";
 
@@ -53,7 +53,12 @@ const OtpScreen = ({ navigation }) => {
           ) : null}
         </View>
       </InputContainer>
-      <Button style={styles.touch}>SEND OTP</Button>
+      <Button
+        style={styles.touch}
+        onPress={() => navigation.navigate("Loader")}
+      >
+        SEND OTP
+      </Button>
       <View style={styles.loginContainer}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Login")}
