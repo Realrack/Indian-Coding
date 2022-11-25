@@ -17,7 +17,7 @@ const StackScreen = () => {
         initialRouteName="OTP"
         screenOptions={{
           headerShown: false,
-          statusBarColor: theme.colors.brand.primary,
+          statusBarColor: theme.colors.brand.tertiary,
         }}
       >
         <Stack.Screen name="OTP" component={OtpScreen} />

@@ -16,6 +16,7 @@ export default function Button({
       {...rest}
       icon={icon}
       mode="contained"
+      color={theme.colors.brand.secondary}
       onPress={onPress}
       style={[styles.button, style]}
       labelStyle={labelStyle}
