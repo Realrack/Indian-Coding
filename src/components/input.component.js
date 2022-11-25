@@ -12,23 +12,13 @@ export default function Input({
   style,
   value,
   secureTextEntry,
-  keyboardType,
   setValue,
   ...rest
 }) {
-  // let keyboardType = "default";
-  // if (
-  //   label === "Name" ||
-  //   label === "Email" ||
-  //   label === "Password" ||
-  //   label === "Create Password" ||
-  //   label === "Confirm Password"
-  // ) {
-  //   keyboardType = "email-address";
-  // }
-  // if (label === "Mobile") {
-  //   keyboardType === "numeric";
-  // }
+  let keyboardType = "email-address";
+  if (label === "Mobile") {
+    keyboardType = "numeric";
+  }
 
   return (
     <TextInput
