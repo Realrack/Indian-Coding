@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { TextInput } from "react-native-paper";
 
 import BaseView from "../../components/baseView.component";
-import { theme } from "../../infrastructure/theme";
 import Button from "../../components/button.component";
 import Input from "../../components/input.component";
 import BackButton from "../../components/backButton.component";

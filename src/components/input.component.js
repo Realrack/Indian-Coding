@@ -42,7 +42,7 @@ export default function Input({
       placeholder={placeholder}
       keyboardType={keyboardType}
       style={[styles.input, style]}
-    ></TextInput>
+    />
   );
 }
 const styles = StyleSheet.create({

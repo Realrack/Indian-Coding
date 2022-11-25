@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { TextInput } from "react-native-paper";
 
 import BaseView from "../../components/baseView.component";
@@ -54,7 +54,7 @@ const LoginScreen = ({ navigation }) => {
 
       <TouchableOpacity
         onPress={() => navigation.navigate("Signup")}
-        style={{ flexDirection: "row", justifyContent: "center" }}
+        style={styles.signup}
       >
         <Text mt={theme.space[3]} subtitle>
           New user?
@@ -73,5 +73,9 @@ const styles = StyleSheet.create({
   forgot: {
     marginTop: theme.space[3],
     alignItems: "flex-end",
+  },
+  signup: {
+    flexDirection: "row",
+    justifyContent: "center",
   },
 });

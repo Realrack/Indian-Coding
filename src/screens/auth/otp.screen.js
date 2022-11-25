@@ -57,7 +57,7 @@ const OtpScreen = ({ navigation }) => {
       <View style={styles.loginContainer}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Login")}
-          style={{ flexDirection: "row", justifyContent: "center" }}
+          style={styles.login}
         >
           <Text subtitle>Already have an account?</Text>
           <Text subtitle color={theme.colors.brand.primary}>
@@ -75,6 +75,10 @@ const styles = StyleSheet.create({
   checkTextContiner: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  login: {
+    flexDirection: "row",
+    justifyContent: "center",
   },
   loginContainer: {
     marginTop: "10%",
