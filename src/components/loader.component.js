@@ -3,7 +3,11 @@ import { Image, StyleSheet } from "react-native";
 import BaseView from "./baseView.component";
 import { theme } from "../infrastructure/theme";
 
-export default function LoaderComponent() {
+export default function LoaderComponent({ navigation }) {
+  setTimeout(() => {
+    navigation.replace("Login");
+  }, 3000);
+
   return (
     <BaseView style={styles.container}>
       <Image
