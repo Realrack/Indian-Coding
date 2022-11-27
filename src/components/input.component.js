@@ -16,7 +16,7 @@ export default function Input({
   ...rest
 }) {
   let keyboardType = "email-address";
-  if (label === "Mobile") {
+  if (label === "Mobile" || label === "Paste your Code") {
     keyboardType = "numeric";
   }
 
