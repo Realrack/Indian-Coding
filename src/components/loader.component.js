@@ -1,13 +1,13 @@
 import React from "react";
-import { Image } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import BaseView from "./baseView.component";
 import { theme } from "../infrastructure/theme";
 
 export default function LoaderComponent() {
   return (
-    <BaseView style={{ alignItems: "center", justifyContent: "center" }}>
+    <BaseView style={styles.container}>
       <Image
-        style={{ width: theme.WIDTH / 2.3, height: theme.HEIGHT / 5 }}
+        style={styles.image}
         source={{
           uri: "https://secretpassions.live/loading-ico.gif",
         }}
@@ -15,3 +15,13 @@ export default function LoaderComponent() {
     </BaseView>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    width: theme.sizes[4],
+    height: theme.sizes[4],
+  },
+});
