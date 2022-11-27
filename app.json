@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.IndianCoding.myapp"
     },
     "web": {
       "favicon": "./assets/icon.png"
