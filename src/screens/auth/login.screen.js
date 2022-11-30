@@ -8,21 +8,39 @@ import Input from "../../components/input.component";
 import Button from "../../components/button.component";
 import InputContainer from "../../components/inputContainer.component";
 import Text from "../../components/text.component";
+import Loader from "../../components/loader.component";
 
 const LoginScreen = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = useState(true);
-  const [email, setEmail] = React.useState();
-  const [password, setPassword] = React.useState();
+  const [username, setUsername] = useState(__DEV__ ? "ashish@gmail.com" : "");
+  const [password, setPassword] = useState(__DEV__ ? "123456789" : "");
+  const [loading, setLoading] = useState(false);
+
+  const login = () => {
+    if (username == "" && password == "") {
+      alert("please enter Data");
+    } else if (username.trim() == "" || username == "null") {
+      alert("enter your username");
+    } else if (password.trim() == "" || password == "null") {
+      alert("enter your password");
+    } else {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
+    }
+  };
 
   return (
     <BaseView>
+      <Loader loading={loading} />
       <Text mt={theme.space[5]} ta={"center"} mb={theme.space[1]} fw title>
         Enter your Email-Id & Password
       </Text>
       <InputContainer>
         <Input
-          value={email}
-          setValue={(text) => setEmail(text)}
+          value={username}
+          setValue={(text) => setUsername(text)}
           label="Email"
           left={<TextInput.Icon name={"email"} />}
         />
@@ -50,7 +68,9 @@ const LoginScreen = ({ navigation }) => {
         </TouchableOpacity>
       </InputContainer>
 
-      <Button style={styles.touch}>Login</Button>
+      <Button style={styles.touch} onPress={login}>
+        Login
+      </Button>
 
       <TouchableOpacity
         onPress={() => navigation.navigate("Signup")}

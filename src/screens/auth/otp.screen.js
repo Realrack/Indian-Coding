@@ -13,8 +13,13 @@ import Text from "../../components/text.component";
 const OtpScreen = ({ navigation }) => {
   const [selected, setSelection] = React.useState(false);
   const [number, setNumber] = React.useState("");
-  const [code, setCode] = React.useState();
+  const [code, setCode] = React.useState("");
 
+  const submit = () => {
+    if (number.trim() == "" || number == null) {
+      alert("please enter number");
+    }
+  };
   return (
     <BaseView>
       <Text mt={theme.space[5]} mb={theme.space[1]} fw title ta={"center"}>
@@ -53,10 +58,7 @@ const OtpScreen = ({ navigation }) => {
           ) : null}
         </View>
       </InputContainer>
-      <Button
-        style={styles.touch}
-        onPress={() => navigation.navigate("Loader")}
-      >
+      <Button style={styles.touch} onPress={submit}>
         SEND OTP
       </Button>
       <View style={styles.loginContainer}>
